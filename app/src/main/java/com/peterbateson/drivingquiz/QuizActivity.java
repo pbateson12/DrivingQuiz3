@@ -31,7 +31,7 @@ public class QuizActivity extends AppCompatActivity {
             new TrueFalse(R.string.question_5, true),
     };
 
-    private void updateQuestion()
+    public void updateQuestion()
     {
         int question = mQuestionBank[mCurrentIndex].getmQuestion();
         mQuestionTextView.setText(question);
@@ -43,26 +43,22 @@ public class QuizActivity extends AppCompatActivity {
         Score.setText(currentScoreString);
     }
 
-
     private void checkAnswer(boolean userPressedTrue) {
         boolean answerIsTrue = mQuestionBank[mCurrentIndex].ismTrueQuestion();
         mCurrentIndex = mCurrentIndex + 1;
 
         int messageResId = 0;
 
-        if (mIsCheater) {
-            messageResId = R.string.judgement_toast;
+        if (userPressedTrue == answerIsTrue) {
+            messageResId = R.string.correct_toast;
+            currentScore = currentScore + 1;
+            currentScoreString = String.valueOf(currentScore);
+            mIsCheater = false;
         } else {
-            if (userPressedTrue == answerIsTrue) {
-                messageResId = R.string.correct_toast;
-                currentScore = currentScore + 1;
-                currentScoreString = String.valueOf(currentScore);
-                mIsCheater = false;
-            } else {
-                messageResId = R.string.incorrect_toast;
-                mIsCheater = false;
-            }
+            messageResId = R.string.incorrect_toast;
+            mIsCheater = false;
         }
+
 
         Toast.makeText(this, messageResId, Toast.LENGTH_SHORT)
                 .show();
@@ -74,7 +70,6 @@ public class QuizActivity extends AppCompatActivity {
             toFinalScorePage.putExtra("score", currentScoreString);
             startActivity(toFinalScorePage);
             finish();
-
         }
 
     }
@@ -109,7 +104,14 @@ public class QuizActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 mCurrentIndex = mCurrentIndex + 1;
-                updateQuestion();
+                if(mCurrentIndex<5){
+                    updateQuestion();
+                } else {
+                    Intent toFinalScorePage = new Intent(QuizActivity.this, FinalScoreActivity.class);
+                    toFinalScorePage.putExtra("score", currentScoreString);
+                    startActivity(toFinalScorePage);
+                    finish();
+                }
                 mIsCheater = false;
             }
         });

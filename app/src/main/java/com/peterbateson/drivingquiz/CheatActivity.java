@@ -19,6 +19,12 @@ public class CheatActivity extends AppCompatActivity{
     private Button mShowAnswer;
     private Button mReturnToQuestion;
 
+    private void setAnswerShownResult(boolean isAnswerShown) {
+        Intent data = new Intent();
+        data.putExtra(EXTRA_ANSWER_SHOWN, isAnswerShown);
+        setResult(RESULT_OK,data);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -65,11 +71,6 @@ public class CheatActivity extends AppCompatActivity{
         });
     }
 
-    private void setAnswerShownResult(boolean isAnswerShown) {
-        Intent data = new Intent();
-        data.putExtra(EXTRA_ANSWER_SHOWN, isAnswerShown);
-        setResult(RESULT_OK,data);
-    }
 
 
 }
