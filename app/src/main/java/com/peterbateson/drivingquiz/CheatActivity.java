@@ -17,6 +17,7 @@ public class CheatActivity extends AppCompatActivity{
     private boolean mAnswerIsTrue;
     private TextView mAnswerTextView;
     private Button mShowAnswer;
+    private Button mReturnToQuestion;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +53,16 @@ public class CheatActivity extends AppCompatActivity{
                 setAnswerShownResult(true);
             }
         });
+
+
+        mReturnToQuestion = (Button)findViewById(R.id.returnToQuestionButton);
+        mReturnToQuestion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent Return = new Intent(CheatActivity.this, QuizActivity.class);
+                startActivity(Return);
+            }
+        });
     }
 
     private void setAnswerShownResult(boolean isAnswerShown) {
@@ -59,5 +70,6 @@ public class CheatActivity extends AppCompatActivity{
         data.putExtra(EXTRA_ANSWER_SHOWN, isAnswerShown);
         setResult(RESULT_OK,data);
     }
+
 
 }

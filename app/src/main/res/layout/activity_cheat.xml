@@ -32,4 +32,13 @@
         android:background="?attr/colorButtonNormal"
         android:textColor="@android:color/background_dark" />
 
+    <Button
+        android:id="@+id/returnToQuestionButton"
+        android:layout_width="238dp"
+        android:layout_height="wrap_content"
+        android:text="@string/return_to_question"
+        android:textSize="18sp"
+        android:background="?attr/colorButtonNormal"
+        android:textColor="@android:color/background_dark" />
+
 </LinearLayout>

@@ -17,5 +17,6 @@
     <string name="judgement_toast">You have scored zero for this question.</string>
     <string name="title_activity_welcome_page">WelcomePageActivity</string>
     <string name="welcome">Welcome to Driving Quiz</string>
+    <string name="return_to_question">Return</string>
 
 </resources>
