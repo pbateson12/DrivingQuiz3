@@ -18,5 +18,8 @@
     <string name="title_activity_welcome_page">WelcomePageActivity</string>
     <string name="welcome">Welcome to Driving Quiz</string>
     <string name="return_to_question">Return</string>
+    <string name="final_score">Your final score is:</string>
+    <string name="multiplayer">Challenge a friend!</string>
+    <string name="return_to_home">Return to home</string>
 
 </resources>

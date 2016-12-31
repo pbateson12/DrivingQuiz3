@@ -15,11 +15,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".QuizActivity" ></activity>
-        <activity android:name=".CheatActivity" ></activity>
-        <activity android:name=".SignUpActivity" ></activity>
-        <activity android:name=".LogInActivity" ></activity>
-        <activity android:name=".WelcomeUserActivity"></activity>
+        <activity android:name=".QuizActivity" />
+        <activity android:name=".CheatActivity" />
+        <activity android:name=".SignUpActivity" />
+        <activity android:name=".LogInActivity" />
+        <activity android:name=".WelcomeUserActivity" />
+        <activity android:name=".FinalScoreActivity"></activity>
     </application>
 
 </manifest>
