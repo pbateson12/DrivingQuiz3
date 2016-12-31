@@ -9,18 +9,27 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="24dp"
-        android:text="@string/warning_text_view" />
+        android:text="You will not score a point if you cheat!"
+        android:textSize="24sp"
+        android:textStyle="normal|bold"
+        android:textColor="@android:color/holo_red_dark" />
 
     <TextView
         android:id="@+id/answerTextView"
-        android:layout_width="wrap_content"
+        android:layout_width="135dp"
         android:layout_height="wrap_content"
-        android:padding="24dp" />
+        android:padding="24dp"
+        android:textSize="30sp"
+        android:textStyle="normal|bold|italic"
+        android:fontFamily="casual" />
 
     <Button
         android:id="@+id/showAnswerButton"
-        android:layout_width="wrap_content"
+        android:layout_width="238dp"
         android:layout_height="wrap_content"
-        android:text="@stirng/show_answer_button" />
+        android:text="@string/show_answer_button"
+        android:textSize="18sp"
+        android:background="?attr/colorButtonNormal"
+        android:textColor="@android:color/background_dark" />
 
 </LinearLayout>

@@ -4,45 +4,69 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity= "center"
-    android:orientation="vertical" >
+    android:orientation="vertical"
+    android:weightSum="1">
 
     <TextView
         android:id="@+id/question_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="24dp"
-        />
+        android:textSize="30sp"
+        android:textStyle="normal|italic"
+        android:lineSpacingExtra="10sp"
+        android:textColor="@android:color/holo_red_dark" />
 
+
+    <Button
+        android:id="@+id/true_button"
+        android:layout_width="329dp"
+        android:layout_height="wrap_content"
+        android:text="@string/true_button"
+        android:elevation="0dp"
+        android:background="@android:color/holo_green_light"
+        android:textSize="24sp"
+        android:textStyle="normal|bold"
+        android:fontFamily="casual" />
+
+    <Button
+        android:id="@+id/false_button"
+        android:layout_width="330dp"
+        android:layout_height='wrap_content'
+        android:text="@string/false_button"
+        android:background="@android:color/holo_red_light"
+        android:textSize="24sp"
+        android:textStyle="normal|bold"
+        android:fontFamily="casual" />
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal" >
 
-        <Button
-            android:id="@+id/true_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/true_button" />
-
-        <Button
-            android:id="@+id/false_button"
-            android:layout_width="wrap_content"
-            android:layout_height='wrap_content'
-            android:text="@string/false_button" />
-
     </LinearLayout>
-
-    <Button
-        android:id="@+id/cheat_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/cheat_button"/>
 
     <Button
         android:id="@+id/next_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/next_button"/>
+        android:text="@string/next_button"
+        android:background="@android:drawable/ic_media_ff"
+        android:elevation="0dp"
+        android:visibility="visible"
+        android:textStyle="normal|bold|italic"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/cheat_button"
+        android:layout_width="193dp"
+        android:layout_height="wrap_content"
+        android:text="@string/cheat_button"
+        android:background="?attr/colorButtonNormal"
+        android:textColor="@android:color/black"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textSize="24sp"
+        android:textStyle="normal|italic"
+        android:textAllCaps="true" />
 
 </LinearLayout>
