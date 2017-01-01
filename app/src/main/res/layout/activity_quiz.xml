@@ -85,4 +85,12 @@
         android:textStyle="normal|italic"
         android:textAllCaps="true" />
 
+    <TextView
+        android:text="@string/cheat_warning"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView10"
+        android:textAlignment="center"
+        android:textColor="@android:color/holo_red_dark" />
+
 </LinearLayout>

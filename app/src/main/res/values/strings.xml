@@ -21,5 +21,8 @@
     <string name="final_score">Your final score is:</string>
     <string name="multiplayer">Challenge a friend!</string>
     <string name="return_to_home">Return to home</string>
+    <string name="answer_true">The statement was true!</string>
+    <string name="answer_false">The statement was false!</string>
+    <string name="cheat_warning">If you cheat, you will score 0 for this question.</string>
 
 </resources>

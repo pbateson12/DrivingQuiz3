@@ -18,7 +18,7 @@ public class QuizActivity extends AppCompatActivity {
     private Button mNextButton;
     private Button mCheatButton;
     private TextView mQuestionTextView;
-    private boolean mIsCheater;
+    private boolean mAnswerIsTrue;
 
     public String currentScoreString = String.valueOf(currentScore);
 
@@ -47,21 +47,10 @@ public class QuizActivity extends AppCompatActivity {
         boolean answerIsTrue = mQuestionBank[mCurrentIndex].ismTrueQuestion();
         mCurrentIndex = mCurrentIndex + 1;
 
-        int messageResId = 0;
-
         if (userPressedTrue == answerIsTrue) {
-            messageResId = R.string.correct_toast;
             currentScore = currentScore + 1;
             currentScoreString = String.valueOf(currentScore);
-            mIsCheater = false;
-        } else {
-            messageResId = R.string.incorrect_toast;
-            mIsCheater = false;
         }
-
-
-        Toast.makeText(this, messageResId, Toast.LENGTH_SHORT)
-                .show();
 
         if(mCurrentIndex<5){
             updateQuestion();
@@ -69,7 +58,6 @@ public class QuizActivity extends AppCompatActivity {
             Intent toFinalScorePage = new Intent(QuizActivity.this, FinalScoreActivity.class);
             toFinalScorePage.putExtra("score", currentScoreString);
             startActivity(toFinalScorePage);
-            finish();
         }
 
     }
@@ -110,9 +98,7 @@ public class QuizActivity extends AppCompatActivity {
                     Intent toFinalScorePage = new Intent(QuizActivity.this, FinalScoreActivity.class);
                     toFinalScorePage.putExtra("score", currentScoreString);
                     startActivity(toFinalScorePage);
-                    finish();
                 }
-                mIsCheater = false;
             }
         });
 
@@ -120,25 +106,32 @@ public class QuizActivity extends AppCompatActivity {
         mCheatButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent toCheatPage = new Intent(QuizActivity.this, CheatActivity.class);
-                    boolean answerIsTrue = mQuestionBank[mCurrentIndex].ismTrueQuestion();
-                    toCheatPage.putExtra(CheatActivity.EXTRA_ANSWER_IS_TRUE,answerIsTrue);
-                    startActivityForResult(toCheatPage, 0);
+                    int messageCheat = 0;
+                    mAnswerIsTrue = mQuestionBank[mCurrentIndex].ismTrueQuestion();
+
+                    if (mAnswerIsTrue) {
+                        messageCheat = R.string.answer_true;
+                    } else {
+                        messageCheat = R.string.answer_false;
+                    }
+
+                    Toast.makeText(getApplicationContext(), messageCheat, Toast.LENGTH_LONG)
+                            .show();
+
+                    mCurrentIndex = mCurrentIndex + 1;
+                    if(mCurrentIndex<5){
+                        updateQuestion();
+                    } else {
+                        Intent toFinalScorePage = new Intent(QuizActivity.this, FinalScoreActivity.class);
+                        toFinalScorePage.putExtra("score", currentScoreString);
+                        startActivity(toFinalScorePage);
+                    }
+
                 }
         });
 
         updateQuestion();
 
     }
-
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (data == null) {
-            return;
-        }
-        mIsCheater = data.getBooleanExtra(CheatActivity.EXTRA_ANSWER_SHOWN, true);
-    }
-
 
 }

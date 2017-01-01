@@ -20,7 +20,7 @@
         <activity android:name=".SignUpActivity" />
         <activity android:name=".LogInActivity" />
         <activity android:name=".WelcomeUserActivity" />
-        <activity android:name=".FinalScoreActivity"></activity>
+        <activity android:name=".FinalScoreActivity" />
     </application>
 
 </manifest>
