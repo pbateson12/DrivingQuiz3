@@ -1,54 +1,62 @@
 package com.peterbateson.drivingquiz;
 
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.content.Intent;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.content.Intent;
+import android.view.View;
 import android.widget.Toast;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 
-public class SignUpActivity extends AppCompatActivity {
 
-    private Button mSignUpButton2;
+public class SignUpActivity extends AppCompatActivity
+{
 
+    Button SignUpButton;
+    EditText enterUsername;
+    EditText enterPassword;
+
+    DatabaseHelperLogIn databaseHelperLogIn;
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
 
+        databaseHelperLogIn = new DatabaseHelperLogIn(this);
+        databaseHelperLogIn = databaseHelperLogIn.open();
 
-        mSignUpButton2 = (Button)findViewById(R.id.sign_up_button2);
-        mSignUpButton2.setOnClickListener(new View.OnClickListener() {
-            @Override
+        enterUsername = (EditText)findViewById(R.id.editTextUserName);
+        enterPassword = (EditText)findViewById(R.id.editTextPassword);
+
+        SignUpButton =(Button)findViewById(R.id.sign_up_button1);
+        SignUpButton.setOnClickListener(new View.OnClickListener() {
+
             public void onClick(View v) {
-                Intent BackToWelcome = new Intent(SignUpActivity.this, WelcomeActivity.class);
-                startActivity(BackToWelcome);
+                String username = enterUsername.getText().toString();
+                String password = enterPassword.getText().toString();
+
+                if(username.equals("")||password.equals(""))
+                {
+                    Toast.makeText(getApplicationContext(), "You need both a password and a username to make an account!", Toast.LENGTH_LONG)
+                            .show();
+                    return;
+                } else {
+                    databaseHelperLogIn.insertUserDetails(username, password);
+                    Toast.makeText(getApplicationContext(), "Sign Up Successful", Toast.LENGTH_LONG).show();
+                    Intent intentBackHome=new Intent(getApplicationContext(),WelcomeActivity.class);
+                    startActivity(intentBackHome);
+                }
             }
         });
     }
 
-    public void onSignUpClick(View v)
-    {
-        if(v.getId() == R.id.sign_up_button2) {
-            EditText username = (EditText) findViewById(R.id.user_name);
-            EditText email = (EditText) findViewById(R.id.user_email);
-            EditText password = (EditText) findViewById(R.id.user_password);
-            EditText password2 = (EditText) findViewById(R.id.user_password2);
 
-            String usernameString = username.getText().toString();
-            String emailString = email.getText().toString();
-            String passwordString = password.getText().toString();
-            String password2String = password2.getText().toString();
-
-            if(passwordString != password2String)
-            {
-                Toast passwordsDoNotMatch = Toast.makeText(SignUpActivity.this, "Passwords do not match!", Toast.LENGTH_SHORT);
-                passwordsDoNotMatch.show();
-            }
-        }
-
-
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        databaseHelperLogIn.close();
     }
 
 }
+

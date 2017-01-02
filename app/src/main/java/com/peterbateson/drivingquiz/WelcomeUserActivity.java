@@ -16,6 +16,10 @@ public class WelcomeUserActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome_user);
 
+        String username = getIntent().getStringExtra("Username");
+        TextView welcomeUsername = (TextView)findViewById(R.id.welcomeUsername);
+        welcomeUsername.setText(username);
+
         mStartButton =(Button)findViewById(R.id.start_button);
         mStartButton.setOnClickListener(new View.OnClickListener() {
             @Override

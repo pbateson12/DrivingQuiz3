@@ -3,7 +3,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="center"
     android:weightSum="1">
 
     <TextView
@@ -19,26 +18,9 @@
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
         android:ems="10"
-        android:id="@+id/user_name"
-        android:textSize="14sp"
-        android:layout_weight="0.14"
-        android:textStyle="normal|italic" />
-
-    <TextView
-        android:text="Email"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView3"
-        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
-        android:lineSpacingExtra="14sp" />
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textEmailAddress"
-        android:ems="10"
-        android:id="@+id/user_email"
-        android:layout_weight="0.12" />
+        android:id="@+id/editTextUserName"
+        android:textSize="18sp"
+        android:hint="Type Here" />
 
     <TextView
         android:text="Password"
@@ -51,32 +33,15 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textCapSentences|textPassword"
+        android:inputType="none|textPassword"
         android:ems="10"
-        android:id="@+id/user_password"
-        android:layout_weight="0.11" />
-
-    <TextView
-        android:text="Confirm Password"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView7"
-        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
-        android:lineSpacingExtra="14sp" />
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textPassword"
-        android:ems="10"
-        android:id="@+id/user_password2"
-        android:layout_weight="0.08" />
+        android:id="@+id/editTextPassword"
+        android:hint="Type Here" />
 
     <Button
         android:text="Sign Up"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/sign_up_button2"
-        android:onClick="onSignUpClick" />
+        android:id="@+id/sign_up_button1" />
 
 </LinearLayout>

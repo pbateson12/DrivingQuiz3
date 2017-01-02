@@ -1,11 +1,11 @@
 package com.peterbateson.drivingquiz;
 
-public class TrueFalse {
+public class QuestionAnswers {
     private int mQuestion;
 
     private boolean mTrueQuestion;
 
-    public TrueFalse(int question, boolean trueQuestion) {
+    public QuestionAnswers(int question, boolean trueQuestion) {
         mQuestion = question;
         mTrueQuestion = trueQuestion;
     }
