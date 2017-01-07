@@ -2,7 +2,7 @@
     <string name="app_name">DrivingQuiz</string>
     <string name="true_button">True</string>
     <string name="false_button">False</string>
-    <string name="next_button">Next</string>
+    <string name="next_button">Skip</string>
     <string name="correct_toast">Correct!</string>
     <string name="incorrect_toast">Incorrect!</string>
     <string name="menu_settings">Settings</string>
@@ -18,28 +18,21 @@
     <string name="return_to_home">Return to home</string>
     <string name="answer_true">The statement was true!</string>
     <string name="answer_false">The statement was false!</string>
-    <string name="cheat_warning">If you cheat, you will score 0 for this question.</string>
-    <string name="question_list_info">
-        On this page, you can choose which question you would like to answer. You do not
-        have to answer the questions in order.</string>
+    <string name="cheat_warning">If you cheat or skip, you will score 0 for this question.</string>
     <string name="sign_up_first">If you do not have an account, please Sign Up first!</string>
+    <string name="question_select">You may select which question you would like to answer here. You do not have to answer the questions in order.</string>
 
 
-    <string name="question_1">You can drive at 15.</string>
-    <string name="question_2">You drive on the right-hand side.</string>
-    <string name="question_3">You can text when the light is red.</string>
-    <string name="question_4">You should accelerate when the light is yellow.</string>
-    <string name="question_5">You can drive above 60 on a highway.</string>
-    <string name="question_6">After driving through a stretch of flooded road, you must test your vehicles head lights</string>
-    <string name="question_7">When riding a bicycle at night, you should have one white light on the front, and one red light and red reflector on the rea</string>
-    <string name="question_8">Leaving a vehicle parked with the engine running is illegal</string>
-    <string name="question_9">If you lose your driving license, you should report it to the police</string>
-    <string name="question_10">A flashing green man light means you should wait on the curb</string>
-    <string name="question_11">In normal conditions, you should overtake a vehicle on the left-hand side</string>
-    <string name="question_12">A driver can consume maximum three alcoholic drinks before driving</string>
-    <string name="question_13">When driving on a slippery road, you should increase tyre pressure</string>
-    <string name="question_14">When a driver approaches a zebra crossing, he/she must not signal to pedestrians to cross</string>
-    <string name="question_15">The best way to make your presence known in heavy rain is to flash headlamps</string>
-    <string name="question_16">Wearing a seatbelt can reduce the chance of death/serious injury by 50%</string>
+    <string name="question_1">Inside a tunnel, the driver should not honk the horn.</string>
+    <string name="question_2">You are required to report injuries due to an accident within 24 hours.</string>
+    <string name="question_3">A driver can consume maximum three alcoholic drinks before driving.</string>
+    <string name="question_4">In the event of a breakdown on the road, you should leave the car there.</string>
+    <string name="question_5">Wearing a seatbelt can reduce the chance of death/serious injury by 50%.</string>
+    <string name="question_6">After driving through a stretch of flooded road, you must test your vehicles head lights.</string>
+    <string name="question_7">When driving on a slippery road, you should increase tyre pressure.</string>
+    <string name="question_8">Leaving a vehicle parked with the engine running is illegal.</string>
+    <string name="question_9">If you lose your driving license, you should report it to the police.</string>
+    <string name="question_10">A flashing green man light means you should wait on the curb.</string>
+
 
 </resources>

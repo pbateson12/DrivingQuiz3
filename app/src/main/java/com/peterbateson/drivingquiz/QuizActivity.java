@@ -19,26 +19,32 @@ public class QuizActivity extends AppCompatActivity {
     private TextView currentQuestion;
     private boolean AnswerIsTrue;
 
+    private Button questionOne;
+    private Button questionTwo;
+    private Button questionThree;
+    private Button questionFour;
+    private Button questionFive;
+    private Button questionSix;
+    private Button questionSeven;
+    private Button questionEight;
+    private Button questionNine;
+    private Button questionTen;
+
+
     public String currentScoreString = String.valueOf(currentScore);
 
 
     private QuestionAnswers[] QuestionBank = new QuestionAnswers[] {
-            new QuestionAnswers(R.string.question_1, false),
+            new QuestionAnswers(R.string.question_1, true),
             new QuestionAnswers(R.string.question_2, true),
             new QuestionAnswers(R.string.question_3, false),
             new QuestionAnswers(R.string.question_4, false),
             new QuestionAnswers(R.string.question_5, true),
             new QuestionAnswers(R.string.question_6, false),
-            new QuestionAnswers(R.string.question_7, true),
+            new QuestionAnswers(R.string.question_7, false),
             new QuestionAnswers(R.string.question_8, true),
             new QuestionAnswers(R.string.question_9, false),
             new QuestionAnswers(R.string.question_10, true),
-            new QuestionAnswers(R.string.question_11, false),
-            new QuestionAnswers(R.string.question_12, false),
-            new QuestionAnswers(R.string.question_13, false),
-            new QuestionAnswers(R.string.question_14, true),
-            new QuestionAnswers(R.string.question_15, true),
-            new QuestionAnswers(R.string.question_16, true),
     };
 
     public void updateQuestionNumber()
@@ -62,7 +68,7 @@ public class QuizActivity extends AppCompatActivity {
             currentScoreString = String.valueOf(currentScore);
         }
 
-        if (Index < 16) {
+        if (Index < 10) {
             updateQuestionNumber();
         } else {
             Intent toFinalScorePage = new Intent(QuizActivity.this, FinalScoreActivity.class);
@@ -103,7 +109,7 @@ public class QuizActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Index = Index + 1;
-                if (Index < 16) {
+                if (Index < 10) {
                     updateQuestionNumber();
                 } else {
                     Intent toFinalScorePage = new Intent(QuizActivity.this, FinalScoreActivity.class);
@@ -131,7 +137,7 @@ public class QuizActivity extends AppCompatActivity {
 
                     Index = Index + 1;
 
-                    if (Index < 16) {
+                    if (Index < 10) {
                         updateQuestionNumber();
                     } else {
                         Intent toFinalScorePage = new Intent(QuizActivity.this, FinalScoreActivity.class);
@@ -140,6 +146,96 @@ public class QuizActivity extends AppCompatActivity {
                     }
 
                 }
+        });
+
+        questionOne = (Button)findViewById(R.id.question_one_button);
+        questionOne.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Index = 0;
+                updateQuestionNumber();
+                }
+        });
+
+        questionTwo = (Button)findViewById(R.id.question_two_button);
+        questionTwo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Index = 1;
+                updateQuestionNumber();
+            }
+        });
+
+        questionThree = (Button)findViewById(R.id.question_three_button);
+        questionThree.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Index = 2;
+                updateQuestionNumber();
+            }
+        });
+
+        questionFour = (Button)findViewById(R.id.question_four_button);
+        questionFour.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Index = 3;
+                updateQuestionNumber();
+            }
+        });
+
+        questionFive = (Button)findViewById(R.id.question_five_button);
+        questionFive.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Index = 4;
+                updateQuestionNumber();
+            }
+        });
+
+        questionSix = (Button)findViewById(R.id.question_six_button);
+        questionSix.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Index = 5;
+                updateQuestionNumber();
+            }
+        });
+
+        questionSeven = (Button)findViewById(R.id.question_seven_button);
+        questionSeven.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Index = 6;
+                updateQuestionNumber();
+            }
+        });
+
+        questionEight = (Button)findViewById(R.id.question_eight_button);
+        questionEight.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Index = 7;
+                updateQuestionNumber();
+            }
+        });
+
+        questionNine = (Button)findViewById(R.id.question_nine_button);
+        questionNine.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Index = 8;
+                updateQuestionNumber();
+            }
+        });
+
+        questionTen = (Button)findViewById(R.id.question_ten_button);
+        questionTen.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Index = 9;
+                updateQuestionNumber();
+            }
         });
 
         updateQuestionNumber();
